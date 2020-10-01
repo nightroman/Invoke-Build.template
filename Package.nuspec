@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Invoke-Build.template</id>
+    <version>1.0.0</version>
+    <authors>Roman Kuzmin</authors>
+    <description>
+Invoke-Build script template.
+    </description>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+    <owners>Roman Kuzmin</owners>
+    <projectUrl>https://github.com/nightroman/Invoke-Build</projectUrl>
+    <icon>ib.png</icon>
+    <license type="expression">Apache-2.0</license>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>Invoke-Build Build Script Template</tags>
+  </metadata>
+</package>
