@@ -11,7 +11,8 @@ task clean {
 # Synopsis: Collect package files in "z".
 task publish {
 	remove z
-	exec {robocopy ib-basic z\content\ib-basic /s} (0..2)
+	exec {robocopy ib-1 z\content\ib-1 /s} (0..2)
+	exec {robocopy ib-2 z\content\ib-2 /s} (0..2)
 	Copy-Item -Destination z @(
 		'ib.png'
 		'Package.nuspec'

@@ -5,10 +5,10 @@
     "Invoke-Build",
     "Script"
   ],
-  "identity": "ib-basic",
-  "groupIdentity": "Invoke-Build",
-  "name": "Invoke-Build basic script",
-  "shortName": "ib-basic",
+  "identity": "ib-2",
+  "groupIdentity": "ib-2",
+  "name": "Invoke-Build self-invoked script with bootstrapping",
+  "shortName": "ib-2",
   "sourceName": "MyProject",
   "preferNameDirectory": true,
   "tags": {
