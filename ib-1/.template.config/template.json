@@ -5,9 +5,8 @@
     "Invoke-Build",
     "Script"
   ],
+  "name": "Invoke-Build normal build script",
   "identity": "ib-1",
-  "groupIdentity": "ib-1",
-  "name": "Invoke-Build simple build script",
   "shortName": "ib-1",
   "sourceName": "MyProject",
   "preferNameDirectory": true,

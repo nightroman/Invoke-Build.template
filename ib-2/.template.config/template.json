@@ -5,9 +5,8 @@
     "Invoke-Build",
     "Script"
   ],
+  "name": "Invoke-Build standalone bootstrapping script",
   "identity": "ib-2",
-  "groupIdentity": "ib-2",
-  "name": "Invoke-Build self-invoked script with bootstrapping",
   "shortName": "ib-2",
   "sourceName": "MyProject",
   "preferNameDirectory": true,
