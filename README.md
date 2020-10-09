@@ -34,8 +34,8 @@ The script may be invoked on its own, i.e. not by `Invoke-Build` command.
 In this case, the script checks for the `InvokeBuild` module installed
 and installs its required version.
 
-The required version value `*` stands for any available installed version and the latest to be installed.
-If `InvokeBuild` is not installed then the latest version is installed automatically.
+The version value `*` stands for any available installed module version.
+If `InvokeBuild` is not installed then the latest version is installed.
 
 Otherwise, the value specifies the required existing version.
 This version is hardcoded (pinned) in the generated script.
