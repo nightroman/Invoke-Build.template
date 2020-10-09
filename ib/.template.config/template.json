@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Roman Kuzmin",
+  "classifications": [
+    "Invoke-Build",
+    "Script"
+  ],
+  "name": "Invoke-Build script",
+  "identity": "ib",
+  "shortName": "ib",
+  "sourceName": "MyProject",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "PowerShell",
+    "type": "item"
+  },
+  "symbols": {
+    "bootstrap": {
+      "type": "parameter",
+      "dataType": "string",
+      "defaultValue": "",
+      "replaces": "MyVersion"
+    },
+    "scope": {
+      "type": "parameter",
+      "dataType": "string",
+      "defaultValue": "CurrentUser",
+      "replaces": "MyScope"
+    },
+    "restore": {
+      "type": "parameter",
+      "dataType": "bool",
+      "defaultValue": "false"
+    }
+  }
+}

@@ -11,8 +11,7 @@ task clean {
 # Synopsis: Collect package files in "z".
 task publish {
 	remove z
-	exec {robocopy ib-1 z\content\ib-1 /s} (0..2)
-	exec {robocopy ib-2 z\content\ib-2 /s} (0..2)
+	exec {robocopy ib z\content\ib /s} (0..2)
 	Copy-Item -Destination z @(
 		'ib.png'
 		'Package.nuspec'
@@ -34,3 +33,18 @@ task install nuget, {
 task uninstall {
 	exec {dotnet new -u Invoke-Build.template}
 }
+
+# Synopsis: Test the template.
+task test {
+	remove z
+	Set-Location (mkdir z)
+	exec { dotnet new ib -n Test1 }
+	exec { dotnet new ib -n Test2Any -b *}
+	exec { dotnet new ib -n Test2Sco -b * -s AllUsers}
+	exec { dotnet new ib -n Test2Ver -b 5.6.0}
+	exec { dotnet new ib -n Test3 -r }
+	exec { dotnet new ib -n Test4 -b * -r}
+}
+
+# Synopsis: Default task.
+task . install, clean
