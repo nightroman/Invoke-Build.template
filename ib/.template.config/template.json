@@ -23,9 +23,19 @@
     },
     "scope": {
       "type": "parameter",
-      "dataType": "string",
+      "dataType": "choice",
       "defaultValue": "CurrentUser",
-      "replaces": "MyScope"
+      "replaces": "MyScope",
+      "choices": [
+        {
+          "choice": "CurrentUser",
+          "description": "Installs module in a location for the current user."
+        },
+        {
+          "choice": "AllUsers",
+          "description": "Installs module in a location for all users."
+        }
+      ]
     },
     "restore": {
       "type": "parameter",

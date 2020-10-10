@@ -36,14 +36,10 @@ task uninstall {
 
 # Synopsis: Test the template.
 task test {
-	remove z
-	Set-Location (mkdir z)
-	exec { dotnet new ib -n Test1 }
-	exec { dotnet new ib -n Test2Any -b *}
-	exec { dotnet new ib -n Test2Sco -b * -s AllUsers}
-	exec { dotnet new ib -n Test2Ver -b 5.6.0}
-	exec { dotnet new ib -n Test3 -r }
-	exec { dotnet new ib -n Test4 -b * -r}
+	exec { dotnet new ib --force -o samples/Script1 }
+	exec { dotnet new ib --force -o samples/Script2 --restore }
+	exec { dotnet new ib --force -o samples/Script3 --bootstrap * }
+	exec { dotnet new ib --force -o samples/Script4 --bootstrap 5.6.2 --scope AllUsers }
 }
 
 # Synopsis: Default task.

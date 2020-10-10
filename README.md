@@ -1,48 +1,40 @@
 # Invoke-Build.template
 Invoke-Build script template
 
+## Samples
+
+Generated build script samples:
+
+- [Sample1](samples/Sample1/Sample1.build.ps1) is created by `dotnet new ib`
+- [Sample2](samples/Sample2/Sample2.build.ps1) is created by `dotnet new ib --restore`
+- [Sample3](samples/Sample3/Sample3.build.ps1) is created by `dotnet new ib --bootstrap *`
+- [Sample4](samples/Sample4/Sample4.build.ps1) is created by `dotnet new ib --bootstrap 5.6.2 --scope AllUsers`
+
 ## Options
 
-The following command:
+Use following command for the list of options:
 
 ```
 dotnet new ib --help
 ```
 
-shows the list of options:
-
-```
-Invoke-Build script (PowerShell)
-Options:
-  -b|--bootstrap
-                  string - Optional
-
-  -s|--scope
-                  string - Optional
-                  Default: CurrentUser
-
-  -r|--restore
-                  bool - Optional
-                  Default: false / (*) true
-```
-
 #### Option `-b|--bootstrap *|version`
 
-Tells to create the standalone script with automatic installation of the `InvokeBuild` module and specifies the required version.
+It creates the standalone script with automatic installation of `InvokeBuild` and specifies the required module version.
 
-The script may be invoked on its own, i.e. not by `Invoke-Build` command.
-In this case, the script checks for the `InvokeBuild` module installed
-and installs its required version.
+The script may be invoked on its own directly, i.e. not by `Invoke-Build` command.
+In this case, the script checks for the `InvokeBuild` module
+and installs its required version if the module is missing.
 
-The version value `*` stands for any available installed module version.
-If `InvokeBuild` is not installed then the latest version is installed.
+The version value `*` stands for any installed module version.
+If `InvokeBuild` is missing then the latest version is installed.
 
 Otherwise, the value specifies the required existing version.
 This version is hardcoded (pinned) in the generated script.
-It may be changed later manually.
+It may be changed later manually in the script.
 
-If this option is omitted then the generated script should be invoked by the `Invoke-Build` command.
-This scenario requires the installed `InvokeBuild` module or use of the `Invoke-Build.ps1` script.
+If this option is omitted then the generated script is invoked by the `Invoke-Build` command.
+This scenario requires the installed `InvokeBuild` module or `Invoke-Build.ps1` script.
 
 #### Option `-s|--scope CurrentUser|AllUsers`
 
@@ -50,8 +42,8 @@ This option is used together with `-b|--bootstrap`.
 It tells where the `InvokeBuild` module should be installed if the required version is missing.
 Available values are:
 
-- `CurrentUser` (default)
-- `AllUsers` (run as administrator)
+- `CurrentUser` (default) Installs in a location for the current user.
+- `AllUsers` (run elevated) Installs in a location for all users.
 
 #### Switch `-r|--restore`
 
