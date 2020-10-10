@@ -3,7 +3,7 @@
 	Build script <https://github.com/nightroman/Invoke-Build>
 
 .Example
-	PS> ./Script3.build.ps1 Build -Configuration Release
+	PS> ./Script3.build.ps1 build -Configuration Release
 #>
 
 param(

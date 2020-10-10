@@ -5,10 +5,10 @@ Invoke-Build script template
 
 Generated build script samples:
 
-- [Sample1](samples/Sample1/Sample1.build.ps1) is created by `dotnet new ib`
-- [Sample2](samples/Sample2/Sample2.build.ps1) is created by `dotnet new ib --restore`
-- [Sample3](samples/Sample3/Sample3.build.ps1) is created by `dotnet new ib --bootstrap *`
-- [Sample4](samples/Sample4/Sample4.build.ps1) is created by `dotnet new ib --bootstrap 5.6.2 --scope AllUsers`
+- [Sample1](samples/Script1/Script1.build.ps1) is created by `dotnet new ib`
+- [Sample2](samples/Script2/Script2.build.ps1) is created by `dotnet new ib --restore`
+- [Sample3](samples/Script3/Script3.build.ps1) is created by `dotnet new ib --bootstrap *`
+- [Sample4](samples/Script4/Script4.build.ps1) is created by `dotnet new ib --bootstrap 5.6.2 --scope AllUsers`
 
 ## Options
 

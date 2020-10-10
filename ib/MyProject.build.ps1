@@ -4,7 +4,7 @@
 //#if (bootstrap != "")
 
 .Example
-	PS> ./MyProject.build.ps1 Build -Configuration Release
+	PS> ./MyProject.build.ps1 build -Configuration Release
 //#endif
 #>
 
