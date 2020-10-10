@@ -1,14 +1,33 @@
 # Invoke-Build.template
-Invoke-Build script template
+
+Build script template for [Invoke-Build](https://github.com/nightroman/Invoke-Build)
+
+## Install
+
+Install the template by this command:
+
+    dotnet new -i Invoke-Build.template
+
+and uninstall by:
+
+    dotnet new -u Invoke-Build.template
+
+## Create
+
+Change to the target directory and invoke
+
+    dotnet new ib [options]
+
+in order to create `<directory-name>.build.ps1` in this directory.
 
 ## Samples
 
 Generated build script samples:
 
-- [Sample1](samples/Script1/Script1.build.ps1) is created by `dotnet new ib`
-- [Sample2](samples/Script2/Script2.build.ps1) is created by `dotnet new ib --restore`
-- [Sample3](samples/Script3/Script3.build.ps1) is created by `dotnet new ib --bootstrap *`
-- [Sample4](samples/Script4/Script4.build.ps1) is created by `dotnet new ib --bootstrap 5.6.2 --scope AllUsers`
+- [Script1](samples/Script1/Script1.build.ps1) is created by `dotnet new ib`
+- [Script2](samples/Script2/Script2.build.ps1) is created by `dotnet new ib --restore`
+- [Script3](samples/Script3/Script3.build.ps1) is created by `dotnet new ib --bootstrap *`
+- [Script4](samples/Script4/Script4.build.ps1) is created by `dotnet new ib --bootstrap 5.6.2 --scope AllUsers`
 
 ## Options
 
@@ -31,10 +50,10 @@ If `InvokeBuild` is missing then the latest version is installed.
 
 Otherwise, the value specifies the required existing version.
 This version is hardcoded (pinned) in the generated script.
-It may be changed later manually in the script.
+It may be manually changed later.
 
-If this option is omitted then the generated script is invoked by the `Invoke-Build` command.
-This scenario requires the installed `InvokeBuild` module or `Invoke-Build.ps1` script.
+If `bootstrap` is omitted then the generated script is supposed to be invoked by `Invoke-Build` as usual.
+This scenario requires installed `InvokeBuild` module or `Invoke-Build.ps1` script.
 
 #### Option `-s|--scope CurrentUser|AllUsers`
 

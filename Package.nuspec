@@ -6,12 +6,14 @@
     <authors>Roman Kuzmin</authors>
     <description>
 Invoke-Build script template.
+
+dotnet new -i Invoke-Build.template
     </description>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
     <owners>Roman Kuzmin</owners>
-    <projectUrl>https://github.com/nightroman/Invoke-Build</projectUrl>
+    <projectUrl>https://github.com/nightroman/Invoke-Build.template</projectUrl>
     <icon>ib.png</icon>
     <license type="expression">Apache-2.0</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
