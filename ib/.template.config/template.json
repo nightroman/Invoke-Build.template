@@ -16,12 +16,14 @@
   },
   "symbols": {
     "bootstrap": {
+      "description": "Creates a standalone script with automatic installation of InvokeBuild and specifies its requred version. Use \"*\" for any installed and latest to install.",
       "type": "parameter",
       "dataType": "string",
       "defaultValue": "",
       "replaces": "MyVersion"
     },
     "scope": {
+      "description": "With --bootstrap, specifies where to install the InvokeBuild module.",
       "type": "parameter",
       "dataType": "choice",
       "defaultValue": "CurrentUser",
@@ -29,15 +31,16 @@
       "choices": [
         {
           "choice": "CurrentUser",
-          "description": "Installs module in a location for the current user."
+          "description": "Installs the module in a location for the current user."
         },
         {
           "choice": "AllUsers",
-          "description": "Installs module in a location for all users."
+          "description": "Installs the module in a location for all users."
         }
       ]
     },
     "restore": {
+      "description": "Tells to add the task `restore` and make `build` with `--no-restore`.",
       "type": "parameter",
       "dataType": "bool",
       "defaultValue": "false"

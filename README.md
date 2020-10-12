@@ -31,7 +31,7 @@ Generated build script samples:
 
 ## Options
 
-Use following command for the list of options:
+Use the following command for the list of options:
 
 ```
 dotnet new ib --help
