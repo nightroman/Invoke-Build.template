@@ -4,9 +4,6 @@
 #>
 
 param(
-	[Parameter(Position=0)]
-	[string[]]$Tasks
-	,
 	[ValidateSet('Debug', 'Release')]
 	[string]$Configuration = 'Release'
 )

@@ -9,9 +9,11 @@
 #>
 
 param(
+//#if (bootstrap != "")
 	[Parameter(Position=0)]
 	[string[]]$Tasks
 	,
+//#endif
 	[ValidateSet('Debug', 'Release')]
 	[string]$Configuration = 'Release'
 )
