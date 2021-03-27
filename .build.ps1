@@ -1,6 +1,6 @@
 <#
 .Synopsis
-	Build script (https://github.com/nightroman/Invoke-Build)
+	Build script, https://github.com/nightroman/Invoke-Build
 #>
 
 # Synopsis: Remove temp files.
@@ -39,7 +39,7 @@ task test {
 	exec { dotnet new ib --force -o samples/Script1 }
 	exec { dotnet new ib --force -o samples/Script2 --restore }
 	exec { dotnet new ib --force -o samples/Script3 --bootstrap * }
-	exec { dotnet new ib --force -o samples/Script4 --bootstrap 5.6.2 --scope AllUsers }
+	exec { dotnet new ib --force -o samples/Script4 --bootstrap 5.7.3 --scope AllUsers }
 }
 
 # Synopsis: Default task.

@@ -2,6 +2,8 @@
 
 Build script template for [Invoke-Build](https://github.com/nightroman/Invoke-Build)
 
+NuGet package [Invoke-Build.template](https://www.nuget.org/packages/Invoke-Build.template/)
+
 ## Install
 
 Install the template by this command:
@@ -27,7 +29,7 @@ Generated build script samples:
 - [Script1](samples/Script1/Script1.build.ps1) is created by `dotnet new ib`
 - [Script2](samples/Script2/Script2.build.ps1) is created by `dotnet new ib --restore`
 - [Script3](samples/Script3/Script3.build.ps1) is created by `dotnet new ib --bootstrap *`
-- [Script4](samples/Script4/Script4.build.ps1) is created by `dotnet new ib --bootstrap 5.6.2 --scope AllUsers`
+- [Script4](samples/Script4/Script4.build.ps1) is created by `dotnet new ib --bootstrap 5.7.3 --scope AllUsers`
 
 ## Options
 

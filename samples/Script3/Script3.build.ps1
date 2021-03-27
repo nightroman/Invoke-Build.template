@@ -1,6 +1,6 @@
 <#
 .Synopsis
-	Build script <https://github.com/nightroman/Invoke-Build>
+	Build script, https://github.com/nightroman/Invoke-Build
 
 .Example
 	PS> ./Script3.build.ps1 build -Configuration Release
@@ -15,7 +15,7 @@ param(
 )
 
 # Ensure and call the module.
-if ([System.IO.Path]::GetFileName($MyInvocation.ScriptName) -ne 'Invoke-Build.ps1') {
+if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
 	$ErrorActionPreference = 'Stop'
 	try {
 		Import-Module InvokeBuild

@@ -2,13 +2,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Invoke-Build.template</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <authors>Roman Kuzmin</authors>
-    <description>
-Invoke-Build script template.
-
-dotnet new -i Invoke-Build.template
-    </description>
+    <description>Invoke-Build script template</description>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>

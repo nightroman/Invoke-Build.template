@@ -1,6 +1,6 @@
 <#
 .Synopsis
-	Build script <https://github.com/nightroman/Invoke-Build>
+	Build script, https://github.com/nightroman/Invoke-Build
 
 .Example
 	PS> ./Script4.build.ps1 build -Configuration Release
@@ -15,8 +15,8 @@ param(
 )
 
 # Ensure and call the module.
-if ([System.IO.Path]::GetFileName($MyInvocation.ScriptName) -ne 'Invoke-Build.ps1') {
-	$InvokeBuildVersion = '5.6.2'
+if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
+	$InvokeBuildVersion = '5.7.3'
 	$ErrorActionPreference = 'Stop'
 	try {
 		Import-Module InvokeBuild -RequiredVersion $InvokeBuildVersion

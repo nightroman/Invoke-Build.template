@@ -1,6 +1,6 @@
 <#
 .Synopsis
-	Build script <https://github.com/nightroman/Invoke-Build>
+	Build script, https://github.com/nightroman/Invoke-Build
 //#if (bootstrap != "")
 
 .Example
@@ -20,7 +20,7 @@ param(
 //#if (bootstrap == "*")
 
 # Ensure and call the module.
-if ([System.IO.Path]::GetFileName($MyInvocation.ScriptName) -ne 'Invoke-Build.ps1') {
+if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
 	$ErrorActionPreference = 'Stop'
 	try {
 		Import-Module InvokeBuild
@@ -36,7 +36,7 @@ if ([System.IO.Path]::GetFileName($MyInvocation.ScriptName) -ne 'Invoke-Build.ps
 //#if (bootstrap != "" && bootstrap != "*")
 
 # Ensure and call the module.
-if ([System.IO.Path]::GetFileName($MyInvocation.ScriptName) -ne 'Invoke-Build.ps1') {
+if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
 	$InvokeBuildVersion = 'MyVersion'
 	$ErrorActionPreference = 'Stop'
 	try {

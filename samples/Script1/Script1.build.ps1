@@ -1,6 +1,6 @@
 <#
 .Synopsis
-	Build script <https://github.com/nightroman/Invoke-Build>
+	Build script, https://github.com/nightroman/Invoke-Build
 #>
 
 param(
