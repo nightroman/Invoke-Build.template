@@ -8,11 +8,11 @@ NuGet package [Invoke-Build.template](https://www.nuget.org/packages/Invoke-Buil
 
 Install the template by this command:
 
-    dotnet new -i Invoke-Build.template
+    dotnet new install Invoke-Build.template
 
 and uninstall by:
 
-    dotnet new -u Invoke-Build.template
+    dotnet new uninstall Invoke-Build.template
 
 ## Create
 
@@ -26,10 +26,10 @@ in order to create `<directory-name>.build.ps1` in this directory.
 
 Generated build script samples:
 
-- [Script1](samples/Script1/Script1.build.ps1) is created by `dotnet new ib`
-- [Script2](samples/Script2/Script2.build.ps1) is created by `dotnet new ib --restore`
-- [Script3](samples/Script3/Script3.build.ps1) is created by `dotnet new ib --bootstrap *`
-- [Script4](samples/Script4/Script4.build.ps1) is created by `dotnet new ib --bootstrap 5.7.3 --scope AllUsers`
+- [Script1](https://github.com/nightroman/Invoke-Build.template/blob/main/samples/Script1/Script1.build.ps1) by `dotnet new ib`
+- [Script2](https://github.com/nightroman/Invoke-Build.template/blob/main/samples/Script2/Script2.build.ps1) by `dotnet new ib --restore`
+- [Script3](https://github.com/nightroman/Invoke-Build.template/blob/main/samples/Script3/Script3.build.ps1) by `dotnet new ib --bootstrap *`
+- [Script4](https://github.com/nightroman/Invoke-Build.template/blob/main/samples/Script4/Script4.build.ps1) by `dotnet new ib --bootstrap 5.7.3 --scope AllUsers`
 
 ## Options
 
@@ -47,12 +47,12 @@ The script may be invoked on its own directly, i.e. not by `Invoke-Build` comman
 In this case, the script checks for the `InvokeBuild` module
 and installs its required version if the module is missing.
 
-The version value `*` stands for any installed module version.
-If `InvokeBuild` is missing then the latest version is installed.
+The version value `*` stands for the command `Invoke-Build`, i.e. any installed module or script.
+If the command is missing then the latest module version is installed.
 
-Otherwise, the value specifies the required existing version.
+Otherwise, the version value specifies the required module version.
 This version is hardcoded (pinned) in the generated script.
-It may be manually changed later.
+Change it manually later in order to upgrade.
 
 If `bootstrap` is omitted then the generated script is supposed to be invoked by `Invoke-Build` as usual.
 This scenario requires installed `InvokeBuild` module or `Invoke-Build.ps1` script.

@@ -11,27 +11,28 @@ task clean {
 # Synopsis: Collect package files in "z".
 task publish {
 	remove z
-	exec {robocopy ib z\content\ib /s} (0..2)
+	exec { robocopy ib z\content\ib /s } 1
 	Copy-Item -Destination z @(
 		'ib.png'
+		'README.md'
 		'Package.nuspec'
 	)
 }
 
 # Synopsis: Make the package.
 task nuget publish, {
-	exec {NuGet.exe pack z\Package.nuspec -NoPackageAnalysis}
+	exec { NuGet.exe pack z\Package.nuspec -NoPackageAnalysis }
 }
 
 # Synopsis: Install the template package.
 task install nuget, {
 	assert ($name = (Get-Item Invoke-Build.template.*.nupkg).Name)
-	exec {dotnet new -i $name}
+	exec { dotnet new install $name }
 }
 
 # Synopsis: Uninstall the template.
 task uninstall {
-	exec {dotnet new -u Invoke-Build.template}
+	dotnet new uninstall Invoke-Build.template
 }
 
 # Synopsis: Test the template.
@@ -43,4 +44,4 @@ task test {
 }
 
 # Synopsis: Default task.
-task . install, clean
+task . uninstall, install, clean

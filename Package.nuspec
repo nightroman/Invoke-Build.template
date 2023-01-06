@@ -2,17 +2,21 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Invoke-Build.template</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <authors>Roman Kuzmin</authors>
+    <owners>Roman Kuzmin</owners>
+    <license type="expression">Apache-2.0</license>
+    <icon>ib.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/nightroman/Invoke-Build.template</projectUrl>
     <description>Invoke-Build script template</description>
+    <releaseNotes>
+Make `--bootstrap *` template suitable for script installation, too.
+Tweak bootstrap code and build script comments.
+    </releaseNotes>
+    <tags>Invoke-Build Build Script Template</tags>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
-    <owners>Roman Kuzmin</owners>
-    <projectUrl>https://github.com/nightroman/Invoke-Build.template</projectUrl>
-    <icon>ib.png</icon>
-    <license type="expression">Apache-2.0</license>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <tags>Invoke-Build Build Script Template</tags>
   </metadata>
 </package>

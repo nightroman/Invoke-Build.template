@@ -1,11 +1,6 @@
 <#
 .Synopsis
 	Build script, https://github.com/nightroman/Invoke-Build
-//#if (bootstrap != "")
-
-.Example
-	PS> ./MyProject.build.ps1 build -Configuration Release
-//#endif
 #>
 
 param(
@@ -19,26 +14,22 @@ param(
 )
 //#if (bootstrap == "*")
 
-# Ensure and call the module.
+# Bootstrap.
 if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
-	$ErrorActionPreference = 'Stop'
-	try {
-		Import-Module InvokeBuild
-	}
-	catch {
+	$ErrorActionPreference = 1
+	if (!(Get-Command Invoke-Build -ErrorAction 0)) {
 		Install-Module InvokeBuild -Scope MyScope -Force
 		Import-Module InvokeBuild
 	}
-	Invoke-Build -Task $Tasks -File $MyInvocation.MyCommand.Path @PSBoundParameters
-	return
+	return Invoke-Build $Tasks $MyInvocation.MyCommand.Path @PSBoundParameters
 }
 //#endif
 //#if (bootstrap != "" && bootstrap != "*")
 
-# Ensure and call the module.
+# Bootstrap.
 if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
+	$ErrorActionPreference = 1
 	$InvokeBuildVersion = 'MyVersion'
-	$ErrorActionPreference = 'Stop'
 	try {
 		Import-Module InvokeBuild -RequiredVersion $InvokeBuildVersion
 	}
@@ -46,8 +37,7 @@ if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
 		Install-Module InvokeBuild -RequiredVersion $InvokeBuildVersion -Scope MyScope -Force
 		Import-Module InvokeBuild -RequiredVersion $InvokeBuildVersion
 	}
-	Invoke-Build -Task $Tasks -File $MyInvocation.MyCommand.Path @PSBoundParameters
-	return
+	return Invoke-Build $Tasks $MyInvocation.MyCommand.Path @PSBoundParameters
 }
 //#endif
 

@@ -1,9 +1,6 @@
 <#
 .Synopsis
 	Build script, https://github.com/nightroman/Invoke-Build
-
-.Example
-	PS> ./Script4.build.ps1 build -Configuration Release
 #>
 
 param(
@@ -14,10 +11,10 @@ param(
 	[string]$Configuration = 'Release'
 )
 
-# Ensure and call the module.
+# Bootstrap.
 if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
+	$ErrorActionPreference = 1
 	$InvokeBuildVersion = '5.7.3'
-	$ErrorActionPreference = 'Stop'
 	try {
 		Import-Module InvokeBuild -RequiredVersion $InvokeBuildVersion
 	}
@@ -25,8 +22,7 @@ if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
 		Install-Module InvokeBuild -RequiredVersion $InvokeBuildVersion -Scope AllUsers -Force
 		Import-Module InvokeBuild -RequiredVersion $InvokeBuildVersion
 	}
-	Invoke-Build -Task $Tasks -File $MyInvocation.MyCommand.Path @PSBoundParameters
-	return
+	return Invoke-Build $Tasks $MyInvocation.MyCommand.Path @PSBoundParameters
 }
 
 # Synopsis: Build project.
